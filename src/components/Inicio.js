@@ -5,7 +5,7 @@ export function Inicio() {
   const [dataUsuarios, setDataUsuarios] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/mostrarUsuarios")
+    axios.get("https://apifirebase-0npp.onrender.com/api/mostrarUsuarios")
       .then((respuesta) => {
         console.log(respuesta);
         setDataUsuarios(respuesta.data);
@@ -18,7 +18,7 @@ export function Inicio() {
   const listaUsuarios = dataUsuarios.map((usuario) => {
     var editar = "/editar/" + usuario.id;
     var borrar = "/borrar/" + usuario.id;
-    var foto = "http://localhost:3000/images/" + usuario.foto;
+    var foto = "https://apifirebase-0npp.onrender.com/images/" + usuario.foto;
 
     return (
       <tr key={usuario.id} className="align-middle">

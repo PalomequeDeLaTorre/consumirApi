@@ -5,7 +5,7 @@ export function Productos() {
   const [dataProductos, setDataProductos] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/mostrarProductos")
+    axios.get("https://apifirebase-0npp.onrender.com/api/mostrarProductos")
       .then((respuesta) => {
         console.log(respuesta);
         setDataProductos(respuesta.data);
@@ -18,7 +18,7 @@ export function Productos() {
   const listaProductos = dataProductos.map((producto) => {
     var editar = "/editar/" + producto.id;
     var borrar = "/borrar/" + producto.id;
-    var foto = "http://localhost:3000/images/" + producto.foto;
+    var foto = "https://apifirebase-0npp.onrender.com/images/" + producto.foto;
 
     return (
       <tr key={producto.id} className="align-middle">
