@@ -41,8 +41,8 @@ export function Productos() {
         <tr>
           <th>id</th>
           <th>Nombre</th>
-          <th>Usuario</th>
           <th>Descripcion</th>
+          <th>Categoria</th>
           <th>Precio</th>
           <th>Foto</th>
           <th>Editar / Borrar</th>
