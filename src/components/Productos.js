@@ -7,7 +7,7 @@ export function Productos() {
   useEffect(() => {
     axios.get("https://apifirebase-0npp.onrender.com/api/mostrarProductos")
       .then((respuesta) => {
-        console.log(respuesta);
+        //console.log(respuesta);
         setDataProductos(respuesta.data);
       })
       .catch((error) => {
@@ -16,10 +16,10 @@ export function Productos() {
   }, []);
 
   const listaProductos = dataProductos.map((producto) => {
+    var foto = "https://apifirebase-0npp.onrender.com/images/" + producto.foto;
     var editar = "/editar/" + producto.id;
     var borrar = "/borrar/" + producto.id;
-    var foto = "https://apifirebase-0npp.onrender.com/images/" + producto.foto;
-
+    
     return (
       <tr key={producto.id} className="align-middle">
         <td>{producto.id}</td>
