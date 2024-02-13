@@ -17,8 +17,8 @@ export function Productos() {
 
   const listaProductos = dataProductos.map((producto) => {
     var foto = "https://apifirebase-0npp.onrender.com/images/" + producto.foto;
-    var editar = "/editar/" + producto.id;
-    var borrar = "/borrar/" + producto.id;
+    var editar = "/EditarProducto/" + producto.id;
+    var borrar = "/BorrarProducto/" + producto.id;
     
     return (
       <tr key={producto.id} className="align-middle">

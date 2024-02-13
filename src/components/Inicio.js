@@ -17,8 +17,8 @@ export function Inicio() {
 
   const listaUsuarios = dataUsuarios.map((usuario) => {
     var foto = "https://apifirebase-0npp.onrender.com/images/" + usuario.foto;
-    var editar = "/editar/" + usuario.id;
-    var borrar = "/borrar/" + usuario.id;
+    var editar = "/EditarUsuario/" + usuario.id;
+    var borrar = "/BorrarUsuario/" + usuario.id;
     
     return (
       <tr key={usuario.id} className="align-middle">

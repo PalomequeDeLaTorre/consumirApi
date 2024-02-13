@@ -39,7 +39,6 @@ export function NuevoProducto() {
                         <textarea className="form-control mb-3" name="descripcion" id="descripcion" placeholder="Descripcion" />
                         <input className="form-control mb-3" type="text" name="categoria" id="categoria" placeholder="Categoria" />
                         <input className="form-control mb-3" type="number" name="precio" id="precio" placeholder="Precio" />
-                        <input className="form-control mb-3" type="password" name="password" id="password" placeholder="Password" />
                         <input className="form-control mb-3" type="file" name="foto" id="foto" />
                     </div>
                     <div className="card-footer">
