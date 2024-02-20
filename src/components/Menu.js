@@ -12,10 +12,10 @@ export function Menu(){
           <a className="nav-link active" aria-current="page" href="/">Usuarios</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/productos">Productos</a>
+          <a className="nav-link active" aria-current="page" href="/nuevo">Nuevo Usuario</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/nuevo">Nuevo Usuario</a>
+          <a className="nav-link active" aria-current="page" href="/productos">Productos</a>
         </li>
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="/nuevoProducto">Nuevo Producto</a>
