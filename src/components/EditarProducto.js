@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 export function EditarProducto() {
     const params = useParams();
+    const navigate = useNavigate();
 
     const [id, setId] = useState("");
     const [nombre, setNombre] = useState("");
@@ -54,6 +55,7 @@ export function EditarProducto() {
             setMensaje(res.data);
             setTimeout(()=>{
                 setMensaje("");
+                navigate('/Productos');
             },3000);
     }
 

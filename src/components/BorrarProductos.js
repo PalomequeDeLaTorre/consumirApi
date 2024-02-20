@@ -10,7 +10,7 @@ export function BorrarProducto() {
         async function borrar() {
                 const res = await axios.get("https://apifirebase-0npp.onrender.com/api/borrarProductoApi/"+ params.id);
                 console.log(res);
-                navigate("/");
+                navigate("/Productos");
         
         }
 

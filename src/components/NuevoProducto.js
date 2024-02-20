@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function NuevoProducto() {
+    const navigate = useNavigate();
+
     const [nombre, setNombre] = useState("");
     const [descripcion, setDescripcion] = useState("");
     const [categoria, setCategoria] = useState("");
@@ -33,6 +36,7 @@ export function NuevoProducto() {
             setMensaje(res.data);
             setTimeout(()=>{
                 setMensaje("");
+                navigate('/Productos');
             },3000);
   
     }

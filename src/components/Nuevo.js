@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Nuevo() {
+    const navigate = useNavigate();
+    
     const [nombre, setNombre]=useState("");
     const [usuario, setUsuario]=useState("");
     const [password, setPassword]=useState("");
@@ -31,6 +34,7 @@ export function Nuevo() {
         setMensaje(res.data);
         setTimeout(()=>{
             setMensaje("");
+            navigate('/');
         },3000);
     }
     
