@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { URL_API } from "../config/rutas";
 
 export function NuevoProducto() {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ export function NuevoProducto() {
         formData.append("precio", precio);
         formData.append("foto", foto);
 
-        const res = await axios.post("https://apifirebase-0npp.onrender.com/api/nuevoproductoApi", formData, {
+        const res = await axios.post(URL_API+"nuevoproductoApi", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { URL_API, URL_IMAGES } from "../config/rutas";
 
 export function EditarProducto() {
     const params = useParams();
@@ -18,14 +19,14 @@ export function EditarProducto() {
 
     useEffect(() => {
         async function buscarPorID() {
-                const res = await axios.get("https://apifirebase-0npp.onrender.com/api/buscarProductosPorId/" + params.id);
+                const res = await axios.get(URL_API+"buscarProductosPorId/" + params.id);
                 setId(res.data.id);
                 setNombre(res.data.nombre);
                 setDescripcion(res.data.descripcion);
                 setCategoria(res.data.categoria);
                 setPrecio(res.data.precio);
                 setFotoVieja(res.data.foto);
-                setNombreFoto("https://apifirebase-0npp.onrender.com/images/" + res.data.foto); 
+                setNombreFoto(URL_IMAGES + res.data.foto); 
         }
         buscarPorID();
     }, [params.id]);
@@ -40,7 +41,7 @@ export function EditarProducto() {
             formData.append("precio", precio);
             formData.append("fotoVieja", fotoVieja);
             formData.append("foto", foto);
-            const res = await axios.post("https://apifirebase-0npp.onrender.com/api/editarProductoApi/", formData, {
+            const res = await axios.post(URL_API+"editarProductoApi/", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }

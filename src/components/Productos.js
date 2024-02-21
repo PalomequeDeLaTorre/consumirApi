@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { URL_API, URL_IMAGES } from "../config/rutas";
 
 export function Productos() {
   const [dataProductos, setDataProductos] = useState([]);
 
   useEffect(() => {
-    axios.get("https://apifirebase-0npp.onrender.com/api/mostrarProductos")
+    axios.get(URL_API+"mostrarProductos")
       .then((respuesta) => {
         //console.log(respuesta);
         setDataProductos(respuesta.data);
@@ -16,7 +17,7 @@ export function Productos() {
   }, []);
 
   const listaProductos = dataProductos.map((producto) => {
-    var foto = "https://apifirebase-0npp.onrender.com/images/" + producto.foto;
+    var foto = URL_IMAGES + producto.foto;
     var editar = "/EditarProducto/" + producto.id;
     var borrar = "/BorrarProducto/" + producto.id;
     

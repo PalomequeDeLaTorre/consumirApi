@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import {useNavigate, useParams } from "react-router-dom";
+import { URL_API } from "../config/rutas";
 
 export function BorrarProducto() {
     const params = useParams();
@@ -8,7 +9,7 @@ export function BorrarProducto() {
 
     useEffect(() => {
         async function borrar() {
-                const res = await axios.get("https://apifirebase-0npp.onrender.com/api/borrarProductoApi/"+ params.id);
+                const res = await axios.get(URL_API+"borrarProductoApi/"+ params.id);
                 console.log(res);
                 navigate("/Productos");
         

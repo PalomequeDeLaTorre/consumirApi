@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { URL_API, URL_IMAGES } from "../config/rutas";
 
 export function Inicio() {
   const [dataUsuarios, setDataUsuarios] = useState([]);
 
   useEffect(() => {
-    axios.get("https://apifirebase-0npp.onrender.com/api/mostrarUsuarios")
+    axios.get(URL_API+"mostrarUsuarios")
       .then((respuesta) => {
         //console.log(respuesta);
         setDataUsuarios(respuesta.data);
@@ -16,7 +17,7 @@ export function Inicio() {
   }, []);
 
   const listaUsuarios = dataUsuarios.map((usuario) => {
-    var foto = "https://apifirebase-0npp.onrender.com/images/" + usuario.foto;
+    var foto = URL_IMAGES + usuario.foto;
     var editar = "/EditarUsuario/" + usuario.id;
     var borrar = "/BorrarUsuario/" + usuario.id;
     

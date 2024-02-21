@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import {useNavigate, useParams } from "react-router-dom";
+import { URL_API } from "../config/rutas";
 
 export function BorrarUsuario() {
     const params = useParams();
@@ -8,7 +9,7 @@ export function BorrarUsuario() {
 
     useEffect(() => {
         async function borrar() {
-                const res = await axios.get("https://apifirebase-0npp.onrender.com/api/borrarUsuario/"+ params.id);
+                const res = await axios.get(URL_API+"borrarUsuario/"+ params.id);
                 console.log(res);
                 navigate("/");
         
